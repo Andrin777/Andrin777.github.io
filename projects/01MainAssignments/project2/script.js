@@ -167,7 +167,7 @@ function draw() {
       ball.vy *= -BOUNCE;
       if (abs(ball.vy) < 1) {
         ball.vy = 0;
-        // Ball bleibt wo er ist, geht nicht mehr zur Mitte
+        // Ball bliibt deht woner gsi isch
       }
     }
     
@@ -272,11 +272,11 @@ function drawHole(hole, index) {
 function drawBall() {
   noStroke();
   
-  // Schatten
+  
   fill(0, 0, 0, 30);
   ellipse(ball.x + 4, ball.y + 4, ball.radius * 2);
   
-  // Ball bleibt immer rot
+  
   fill(0, 80, 90);
   ellipse(ball.x, ball.y, ball.radius * 2);
 }

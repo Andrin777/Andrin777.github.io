@@ -1,6 +1,6 @@
 let font;
 function preload() {
-  font = loadFont("Standie.otf");
+  font = loadFont("Standie.otf"); //im Ordrner ablegen!
 }
 
 let points1, points2;
@@ -26,7 +26,7 @@ function setup() {
   });
   bounds2 = font.textBounds("Nyffeler", 0, 0, 5);
   
-  // Initialisiere Partikel für beide Wörter
+  //  Partikel für beide Wörter
   initParticles();
 }
 
@@ -86,7 +86,7 @@ function mousePressed() {
   isExploded = !isExploded;
   
   if (isExploded) {
-    // Explosion - gib jedem Partikel eine zufällige Geschwindigkeit
+    
     for (let particle of particles1) {
       particle.vx = random(-15, 15);
       particle.vy = random(-15, 15);
@@ -101,15 +101,15 @@ function mousePressed() {
 }
 
 function updateParticles() {
-  // Update Andrin Partikel
+  
   for (let particle of particles1) {
     if (isExploded) {
-      // Fliege davon
+      
       particle.x += particle.vx;
       particle.y += particle.vy;
       particle.z += particle.vz;
     } else {
-      // Kehre zur Heimposition zurück
+      //Anfangposition
       let dx = particle.homeX - particle.x;
       let dy = particle.homeY - particle.y;
       let dz = 0 - particle.z;
@@ -124,15 +124,15 @@ function updateParticles() {
     }
   }
   
-  // Update Nyffeler Partikel
+  
   for (let particle of particles2) {
     if (isExploded) {
-      // Fliege davon
+      
       particle.x += particle.vx;
       particle.y += particle.vy;
       particle.z += particle.vz;
     } else {
-      // Kehre zur Heimposition zurück
+      
       let dx = particle.homeX - particle.x;
       let dy = particle.homeY - particle.y;
       let dz = 0 - particle.z;
@@ -169,7 +169,7 @@ function draw() {
   let horizontalStretch = 3;
   let lineSpacing = 400;
   
-  // Zeichne Andrin Partikel
+  
   let scaleW1 = (width / bounds1.w) * scaleFactor * horizontalStretch;
   let scaleH1 = (height / bounds1.h) * scaleFactor;
   let fontX1 = -(bounds1.w * scaleW1) / 2 - bounds1.x * scaleW1;
@@ -187,7 +187,7 @@ function draw() {
   }
   pop();
   
-  // Zeichne Nyffeler Partikel
+  
   let scaleW2 = (width / bounds2.w) * scaleFactor * horizontalStretch;
   let scaleH2 = (height / bounds2.h) * scaleFactor;
   let fontX2 = -(bounds2.w * scaleW2) / 2 - bounds2.x * scaleW2;
